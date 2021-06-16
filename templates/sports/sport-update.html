@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<nav>
+<a href="{%url 'sport_list'%}"> Go to players list </a>
+<a href="{% url 'sport_create' %}"> + New player </a>
+</nav>
+<h1>Update player info</h1>
+<form action="" method="post" class="uniForm">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <input type="submit" value="SAVE">
+</form>
+
+{% endblock content %}

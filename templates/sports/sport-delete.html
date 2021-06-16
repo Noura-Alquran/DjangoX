@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<nav>
+<a href="{%url 'sport_list'%}">Go to players list </a>
+<a href="{% url 'sport_create' %}"> + New player </a>
+</nav>
+
+<h1>Delete Player</h1>
+<form action="" method="post">
+  {% csrf_token %}
+  <p>Do you really want to delete "{{ sport.player_name }} from the list"?</p>
+  <input type="submit" value="YES">
+</form>
+
+{% endblock content %}
