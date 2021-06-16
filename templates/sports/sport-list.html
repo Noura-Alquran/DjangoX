@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+<a href="{% url 'sport_create' %}"> + New Player </a>
+<h1>Players List</h1>
+
+<ul>
+  {% for sport in object_list %}
+  <li>
+    <a href="{% url 'sport_detail' sport.pk %}">{{ sport.player_name }}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock content %}

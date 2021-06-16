@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% block content %}
+  <div>
+    <nav>
+    <a href="{%url 'sport_list'%}">Go to players list </a>
+    <a href="{% url 'sport_create' %}"> + New player </a>
+    </nav>
+    <h2>{{ sport.player_name }}</h2>
+    <p>purchaser: {{ sport.coach_s_name }}</p>
+    <p>description: {{ sport.description }}</p>
+    <a href="{% url 'sport_update' sport.pk %}">Update player info</a>
+    <a href="{% url 'sport_delete' sport.pk %}">Delete player</a>
+  </div>
+
+{% endblock content %}
